@@ -1,0 +1,334 @@
+[
+    {
+        "id": "181e1dcdbefe74da",
+        "type": "tab",
+        "label": "nodeRED - valtozo",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b4ac2df8c170ce9c",
+        "type": "change",
+        "z": "181e1dcdbefe74da",
+        "name": "kivant",
+        "rules": [
+            {
+                "t": "set",
+                "p": "szamlalo",
+                "pt": "flow",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 750,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7b5de451c14931e5",
+        "type": "debug",
+        "z": "181e1dcdbefe74da",
+        "name": "debug 11",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "964fcf31d44cbad5",
+        "type": "inject",
+        "z": "181e1dcdbefe74da",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "10",
+        "payloadType": "num",
+        "x": 220,
+        "y": 360,
+        "wires": [
+            [
+                "afe01f77934192b8"
+            ]
+        ]
+    },
+    {
+        "id": "9103cf95dfbf4bfc",
+        "type": "inject",
+        "z": "181e1dcdbefe74da",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "2",
+        "payloadType": "num",
+        "x": 220,
+        "y": 400,
+        "wires": [
+            [
+                "afe01f77934192b8"
+            ]
+        ]
+    },
+    {
+        "id": "39ad6ff71a8d6c1e",
+        "type": "inject",
+        "z": "181e1dcdbefe74da",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 220,
+        "y": 440,
+        "wires": [
+            [
+                "afe01f77934192b8"
+            ]
+        ]
+    },
+    {
+        "id": "4dc8f7944895c801",
+        "type": "change",
+        "z": "181e1dcdbefe74da",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "szamlalo2",
+                "pt": "flow",
+                "to": "\"+1\"",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 610,
+        "y": 380,
+        "wires": [
+            [
+                "7b5de451c14931e5"
+            ]
+        ]
+    },
+    {
+        "id": "afe01f77934192b8",
+        "type": "switch",
+        "z": "181e1dcdbefe74da",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "szamlalo",
+                "vt": "flow"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 380,
+        "y": 400,
+        "wires": [
+            [
+                "4dc8f7944895c801"
+            ]
+        ]
+    },
+    {
+        "id": "e3d2bbdc8f4e9dc7",
+        "type": "comment",
+        "z": "181e1dcdbefe74da",
+        "name": "változókezelésre példa",
+        "info": "",
+        "x": 140,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "cd8f30a5b8a0a246",
+        "type": "inject",
+        "z": "181e1dcdbefe74da",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 600,
+        "y": 140,
+        "wires": [
+            [
+                "b4ac2df8c170ce9c"
+            ]
+        ]
+    },
+    {
+        "id": "1d03d138de2ddd7a",
+        "type": "change",
+        "z": "181e1dcdbefe74da",
+        "name": "kivant",
+        "rules": [
+            {
+                "t": "set",
+                "p": "szamlalo",
+                "pt": "flow",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 750,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "310cf313fe84a73b",
+        "type": "inject",
+        "z": "181e1dcdbefe74da",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 600,
+        "y": 200,
+        "wires": [
+            [
+                "1d03d138de2ddd7a"
+            ]
+        ]
+    },
+    {
+        "id": "7a84d71edb333bc5",
+        "type": "change",
+        "z": "181e1dcdbefe74da",
+        "name": "kivant",
+        "rules": [
+            {
+                "t": "set",
+                "p": "szamlalo",
+                "pt": "flow",
+                "to": "$flowContext(\"szamlalo\") + 1\t",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1050,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b95b354bd3d6929a",
+        "type": "inject",
+        "z": "181e1dcdbefe74da",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 900,
+        "y": 160,
+        "wires": [
+            [
+                "7a84d71edb333bc5"
+            ]
+        ]
+    }
+]
